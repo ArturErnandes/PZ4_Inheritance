@@ -21,7 +21,6 @@ public:
         }
     }
 
-    // Конструктор копирования
     DynamicArray(const DynamicArray& other) {
         size = other.size;
         data = new int[size];
@@ -63,13 +62,11 @@ public:
     }
 };
 
-// === Наследуемый класс ===
 class AdvancedArray : public DynamicArray {
 public:
     AdvancedArray(int n) : DynamicArray(n) {}
     AdvancedArray(const DynamicArray& other) : DynamicArray(other) {}
 
-    // Среднее значение
     double average() const {
         if (size == 0) return 0.0;
         double sum = 0;
@@ -77,7 +74,6 @@ public:
         return sum / size;
     }
 
-    // Медиана
     double median() const {
         if (size == 0) return 0.0;
         int* temp = new int[size];
@@ -94,7 +90,6 @@ public:
         return med;
     }
 
-    // Минимум
     int minValue() const {
         if (size == 0) return 0;
         int minVal = data[0];
@@ -103,7 +98,6 @@ public:
         return minVal;
     }
 
-    // Максимум
     int maxValue() const {
         if (size == 0) return 0;
         int maxVal = data[0];
